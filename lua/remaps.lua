@@ -25,10 +25,16 @@ end
 
 set_key("i", "kk", "<Esc>") -- nice idea since on my 60% keyboard there is no ~ symbol (had to rebind Esc to it)
 
--- some parethenses remaps
-set_key("i", "{", "{}<Esc>ha<CR><CR><Esc>ka<Tab>")
+-- some pairing symbols remaps
+set_key("i", "{", "{}<Esc>ha")
 set_key("i", "(", "()<Esc>ha")
 set_key("i", "[", "[]<Esc>ha")
+
+set_key("i", "{<CR>", "{<CR>}<Esc>ka<CR>")
+set_key("i", "[<CR>", "[<CR>]<Esc>ka<CR>")
+set_key("i", "(<CR>", "(<CR>)<Esc>ka<CR>")
+
+set_key("i", '"', '""<Esc>ha')
 
 -- some splits remaps
 set_key("n", "<leader>tk", "<C-w>t<C-w>K")

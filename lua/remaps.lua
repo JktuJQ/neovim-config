@@ -15,6 +15,7 @@ end
 vim.g.set_keyleader = ","
 
 -- disable those! (maybe remap them for something useful)
+--[[
 local modes = {"n", "v", "i", "c"}
 local keys = {"<up>", "<down>", "<left>", "<right>"}
 for _, mode in ipairs(modes) do
@@ -22,19 +23,28 @@ for _, mode in ipairs(modes) do
       set_key(mode, key, "<nop>")
   end
 end
+]]--
 
 set_key("i", "kk", "<Esc>") -- nice idea since on my 60% keyboard there is no ~ symbol (had to rebind Esc to it)
 
 -- some pairing symbols remaps
+set_key("i", "{}", "{}")
+set_key("i", "[]", "[]")
+set_key("i", "()", "()")
+set_key("i", '""', '""')
+
+set_key("i", "{{", "{")
+set_key("i", "[[", "[")
+set_key("i", "((", "(")
+
 set_key("i", "{", "{}<Esc>ha")
-set_key("i", "(", "()<Esc>ha")
 set_key("i", "[", "[]<Esc>ha")
-
-set_key("i", "{<CR>", "{<CR>}<Esc>ka<CR>")
-set_key("i", "[<CR>", "[<CR>]<Esc>ka<CR>")
-set_key("i", "(<CR>", "(<CR>)<Esc>ka<CR>")
-
+set_key("i", "{", "{}<Esc>ha")
 set_key("i", '"', '""<Esc>ha')
+
+set_key("i", "{<CR>", "{<CR>}<Esc>k$a<CR>")
+set_key("i", "[<CR>", "[<CR>]<Esc>k$a<CR>")
+set_key("i", "(<CR>", "(<CR>)<Esc>k$a<CR>")
 
 -- some splits remaps
 set_key("n", "<leader>tk", "<C-w>t<C-w>K")
@@ -51,7 +61,7 @@ set_key("n", "<leader>s", ":w<CR>")
 set_key("n", "<leader>q", ":qa!<CR>")
 
 -- nvim-tree remaps
-set_key("n", "<C-n>", ":NvimTreeToggle<CR>")
+set_key("n", "<C-n>", "<Cmd>NvimTreeToggle<CR>")
 
 -- barbar remaps
 set_key("n", "<A-,>", "<Cmd>BufferPrevious<CR>")

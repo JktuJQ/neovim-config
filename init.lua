@@ -20,7 +20,7 @@ require("languages//rust")
 
 -- haskell
 --lspconfig.hls.setup({}) -- commented because of usage of haskell-tools
-require("languages//haskell")
+--require("languages//haskell")
 
 -- nvim-qt gui
 require("gui")

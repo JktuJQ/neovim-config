@@ -12,11 +12,12 @@ local function on_attach()
    vim.keymap.set("n", "gs", "<cmd>lua vim.lsp.buf.signature_help()<cr>", { buffer = 0 })
 end
 
-local languages = { "clangd", "pyright", "cmake" }
+local languages = { }
 
 return {
    {
       "neovim/nvim-lspconfig",
+      version = "1.0.0",
       dependencies = { "hrsh7th/cmp-nvim-lsp" },
       config = function()
          local capabilities = require('cmp_nvim_lsp').default_capabilities()
@@ -39,7 +40,7 @@ return {
          })
 
          for _, language in pairs(languages) do
-            local lopts = {
+                local lopts = {
                     on_attach = on_attach,
                     capabilities = capabilities,
                 }
@@ -65,7 +66,8 @@ return {
    {
       "williamboman/mason-lspconfig.nvim",
       opts = {
-         ensure_installed = { "lua_ls", "clangd", "pyright", "rust_analyzer", "jinja_lsp", "hls"}
+         ensure_installed = { },
+         automatic_installation = false,
       }
-   }
+   },
 }

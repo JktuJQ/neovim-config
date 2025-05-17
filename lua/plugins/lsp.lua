@@ -21,23 +21,6 @@ return {
       dependencies = { "hrsh7th/cmp-nvim-lsp" },
       config = function()
          local capabilities = require('cmp_nvim_lsp').default_capabilities()
-         require("lspconfig").lua_ls.setup({
-            on_attach = on_attach,
-            capabilities = capabilities,
-            settings = {
-               Lua = {
-                  diagnostics = {
-                     globals = {"vim"},
-                  },
-               },
-            },
-         })
-
-         require("lspconfig").tailwindcss.setup({
-            on_attach = function()
-               require("tailwindcss-colors").buf_attach(0)
-            end
-         })
 
          for _, language in pairs(languages) do
                 local lopts = {

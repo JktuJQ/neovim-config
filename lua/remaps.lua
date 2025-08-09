@@ -11,6 +11,11 @@ local function set_key(mode, lhs, rhs)
   vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
+set_key("n", "<left>", "3h")
+set_key("n", "<down>", "3j")
+set_key("n", "<up>", "3k")
+set_key("n", "<right>", "3l")
+
 -- disable those! (maybe remap them for something useful)
 --[[
 local modes = {"n", "v", "i", "c"}
@@ -47,6 +52,11 @@ set_key("i", "{<CR>", "{<CR>}<Esc>k$a<CR>")
 set_key("i", "[<CR>", "[<CR>]<Esc>k$a<CR>")
 set_key("i", "(<CR>", "(<CR>)<Esc>k$a<CR>")
 
+set_key("v", "(", "c()<Esc>hp")
+set_key("v", "[", "c[]<Esc>hp")
+set_key("v", "{", "c{}<Esc>hp")
+set_key("v", '"', 'c""<Esc>hp')
+
 -- some splits remaps
 set_key("n", "<C-h>", "<C-w>h")
 set_key("n", "<C-j>", "<C-w>j")
@@ -58,7 +68,7 @@ set_key("n", "<leader>w", ":wa<CR>")
 set_key("n", "<leader>q", ":qa!<CR>")
 
 -- neotree remaps
-set_key("n", "<C-n>", "<Cmd>Neotree toggle<CR>")
+set_key("n", "<C-m>", "<Cmd>Neotree toggle<CR>")
 
 -- barbar remaps
 set_key("n", "<A-h>", "<Cmd>BufferPrevious<CR>")
@@ -76,7 +86,7 @@ set_key("n", "<A-8>", "<Cmd>BufferGoto 8<CR>")
 set_key("n", "<A-9>", "<Cmd>BufferGoto 9<CR>")
 set_key("n", "<A-0>", "<Cmd>BufferLast<CR>")
 set_key("n", "<A-P>", "<Cmd>BufferPin<CR>")
-set_key("n", "<A-c>", "<Cmd>BufferClose<CR>")
+set_key("n", "<A-q>", "<Cmd>BufferClose<CR>")
 set_key("n", "<A-f>", "<Cmd>BufferPick<CR>")
 set_key("n", "<leader>bb", "<Cmd>BufferOrderByBufferNumber<CR>")
 set_key("n", "<leader>bn", "<Cmd>BufferOrderByName<CR>")

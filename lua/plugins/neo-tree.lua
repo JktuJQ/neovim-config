@@ -1,4 +1,6 @@
- return {
+local remap = require("remaps")
+
+return {
     "nvim-neo-tree/neo-tree.nvim",
     branch = "v3.x",
     dependencies = {
@@ -13,4 +15,7 @@
             width = 30,
         },
     },
+    init = function()
+        remap("n", "<C-m>", "<Cmd>Neotree toggle<CR>")
+    end
 }

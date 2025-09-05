@@ -13,6 +13,9 @@ require("mason-lspconfig").setup({
 
 local lspconfig = require("lspconfig")
 lspconfig.rust_analyzer.setup({
+    on_attach = function()
+        vim.diagnostic.config({ virtual_text = true })
+    end,
     settings = {
     	["rust-analyzer"] = {
       	    procMacro = { enable = true },

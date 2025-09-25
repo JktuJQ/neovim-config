@@ -1,36 +1,27 @@
---[[
-    'remaps.lua' sets all key remaps that are needed.
-]]--
-
 -- handy remap function
-local function remap(mode, lhs, rhs)
+local function remap(mode, lhs, rhs, opts)
     local options = { noremap=true, silent=true }
     if opts then
-        options = vim.tbl_extend("force", options)
+        options = vim.tbl_extend("force", opts, options)
     end
-    
+
     if type(rhs) == "function" then
-        vim.keymap.set(mode, lhs, rhs, option)
+        vim.keymap.set(mode, lhs, rhs, options)
     else 
         vim.api.nvim_set_keymap(mode, lhs, rhs, options)
     end
 end
 
+-- fast movement
 remap("n", "<left>", "3h")
 remap("n", "<down>", "3j")
 remap("n", "<up>", "3k")
 remap("n", "<right>", "3l")
 
--- disable those! (maybe remap them for something useful)
---[[
-local modes = {"n", "v", "i", "c"}
-local keys = {"<up>", "<down>", "<left>", "<right>"}
-for _, mode in ipairs(modes) do
-  for _, key in ipairs(keys) do
-      remap(mode, key, "<nop>")
-  end
-end
-]]--
+remap("v", "<left>", "3h")
+remap("v", "<down>", "3j")
+remap("v", "<up>", "3k")
+remap("v", "<right>", "3l")
 
 -- basic remaps
 remap("i", "kk", "<Esc>")

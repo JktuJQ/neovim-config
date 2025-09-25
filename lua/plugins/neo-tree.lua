@@ -1,5 +1,3 @@
-local remap = require("remaps")
-
 return {
     {
         "nvim-neo-tree/neo-tree.nvim",
@@ -18,6 +16,7 @@ return {
         },
 
         init = function()
+            local remap = require("remaps")
             remap("n", "<C-m>", "<Cmd>Neotree toggle<CR>")
         end
     }

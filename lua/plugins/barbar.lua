@@ -1,5 +1,3 @@
-local remap = require("remaps")
-
 return {
     {
         "romgrk/barbar.nvim",
@@ -8,8 +6,9 @@ return {
             "nvim-tree/nvim-web-devicons",
         },
         init = function() 
-            vim.g.barbar_auto_setup = true,
-
+            vim.g.barbar_auto_setup = true
+            
+            local remap = require("remaps")
             remap("n", "<A-h>", "<Cmd>BufferPrevious<CR>")
             remap("n", "<A-l>", "<Cmd>BufferNext<CR>")
             remap("n", "<A-j>", "<Cmd>BufferMovePrevious<CR>")

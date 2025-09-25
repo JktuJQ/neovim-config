@@ -7,5 +7,7 @@ return {
         functions = {},
         variables = {},
     },
-    config = function() vim.cmd("colorscheme duskfox") end
+    config = function()
+        vim.cmd("colorscheme duskfox")
+    end
 }

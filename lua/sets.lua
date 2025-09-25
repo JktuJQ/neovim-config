@@ -1,17 +1,13 @@
---[[
-    'sets.lua' setups different settings of neovim.
-]]--
-
 -- appearance
 vim.opt.termguicolors = true
 vim.g.have_nerd_fonts = true
 
--- Lining
+-- lining
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.scrolloff = 8
 
--- Tabs
+-- tabs
 vim.opt.autoindent = true
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4

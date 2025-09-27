@@ -25,7 +25,7 @@ remap("v", "<right>", "3l")
 
 -- basic remaps
 remap("i", "kk", "<Esc>")
-remap("n", "<Esc>", "<cmd>nohlsearch<CR>")
+remap("n", "<Esc>", "<Cmd>nohlsearch<CR>")
 
 remap("i", "<C-t>", "`")
 
@@ -38,6 +38,7 @@ remap("i", '""', '""')
 remap("i", "{{", "{")
 remap("i", "[[", "[")
 remap("i", "((", "(")
+remap("i", '""', '"')
 
 remap("i", "{", "{}<Esc>ha")
 remap("i", "[", "[]<Esc>ha")
@@ -57,10 +58,6 @@ remap("n", "<C-h>", "<C-w>h")
 remap("n", "<C-j>", "<C-w>j")
 remap("n", "<C-k>", "<C-w>k")
 remap("n", "<C-l>", "<C-w>l")
-
--- some leader remaps
-remap("n", "<leader>w", ":wa<CR>")
-remap("n", "<leader>q", ":qa!<CR>")
 
 -- neotree remaps
 remap("n", "<C-m>", "<Cmd>Neotree toggle<CR>")

@@ -7,11 +7,11 @@ local git_status = function()
 
         local full_output = ""
         if branch == "" and diff == "" then
-            full_output = "Clean working directory"
+            full_output = "No git changes"
+        elseif branch ~= "" and diff == "" then
+            full_output = "On branch: " .. branch .. "\n\nNo git changes"
         elseif branch ~= "" and diff ~= "" then
             full_output = "On branch: " .. branch .. "\n" .. diff
-        elseif branch ~= "" then
-            full_output = "On branch: " .. branch
         else
             full_output = diff
         end
@@ -31,6 +31,8 @@ local git_status = function()
         else
             git_output = full_output
         end
+    else
+        git_output = "Not in a git repository"
     end
     return git_output
 end
@@ -38,10 +40,8 @@ end
 return {
     preset = {
         keys = {
-            { icon = "󰉋 ", key = "m", desc = "File Explorer", action = ":Neotree toggle" },
-            { icon = "󰒓 ", key = "c", desc = "Config", action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})" },
+            { icon = "󰒓 ", key = "c", desc = "Config", action = ":lua Snacks.picker.files({ cwd = vim.fn.stdpath('config') })" },
             { icon = "󰒲 ", key = "L", desc = "Lazy", action = ":Lazy", enabled = package.loaded.lazy ~= nil },
-            { icon = "󰅚 ", key = "q", desc = "Quit", action = ":qa" },
         },
     },
     sections = {
@@ -63,7 +63,7 @@ return {
             indent = 2,
             padding = 1,
             action = function(item)
-                vim.cmd.edit(item.file)
+                Snacks.explorer(item.file)
             end,
         },
         {
@@ -75,7 +75,7 @@ return {
             indent = 2,
             padding = 1,
             action = function(item)
-                vim.cmd.edit(item.file)
+                Snacks.explorer(item.file)
             end,
         },
         { pane = 2, gap = 5 },

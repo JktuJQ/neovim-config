@@ -8,5 +8,4 @@ local opts = {
 
 return {
     opts = opts,
-    config = config,
 }

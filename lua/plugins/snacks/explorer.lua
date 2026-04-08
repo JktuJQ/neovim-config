@@ -1,10 +1,8 @@
-local remap = function(remap)
-    remap("n", "<C-m>", function() Snacks.explorer() end)
+local remap = function()
+    Snacks.keymap.set("n", "<C-m>", function() Snacks.explorer() end)
 end
 
-remap(require("remaps.init").remap)
-
-return {
+local opts = {
     enabled = true,
     replace_netrw = true,
     trash = true,
@@ -22,4 +20,13 @@ return {
         border = "none",
         focus = false,
     },
+}
+
+local config = function()
+    remap()
+end
+
+return {
+    opts = opts,
+    config = config,
 }

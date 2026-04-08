@@ -1,8 +1,8 @@
-local os_specific = require("os_specific")
-os_specific.setup_clipboard()
-
-require("remaps")
-
-require("sets")
+require("core.sets")
 
 require("nvim-lazy")
+
+require("core.remaps")
+
+require("core.os_specific")
+require("core.os_specific").setup_clipboard()

@@ -1,7 +1,8 @@
 local git_status = function()
-    local root = Snacks.git.get_root()
+    local root = vim.fn.system({ "git", "rev-parse", "--show-toplevel" }):gsub("\n", "")
     local git_output = ""
-    if root then
+
+    if root ~= "" and vim.v.shell_error == 0 then
         local branch = vim.fn.system({ "git", "-C", root, "branch", "--show-current" }):gsub("\n", "")
         local diff = vim.fn.system({ "git", "-C", root, "--no-pager", "diff", "--stat", "-B", "-M", "-C" })
 
@@ -37,7 +38,7 @@ local git_status = function()
     return git_output
 end
 
-return {
+local opts = {
     preset = {
         keys = {
             { icon = "󰒓 ", key = "c", desc = "Config", action = ":lua Snacks.picker.files({ cwd = vim.fn.stdpath('config') })" },
@@ -99,4 +100,8 @@ return {
         },
         { section = "startup" },
     },
+}
+
+return {
+    opts = opts,
 }

@@ -1,11 +1,17 @@
+local opts = {
+    ensure_installed = { "lua" },
+    auto_install = true,
+    highlight = {
+        enable = true,
+    }
+}
+
 return {
     {
         "nvim-treesitter/nvim-treesitter",
 
         build = ":TSUpdate",
 
-        opts = function()
-            return require("configs.treesitter").opts
-        end,
+        opts = opts
     },
 }

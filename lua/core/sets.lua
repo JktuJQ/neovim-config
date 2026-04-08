@@ -2,6 +2,20 @@
 vim.opt.termguicolors = true
 vim.g.have_nerd_fonts = true
 
+-- windows/tabs/splits
+vim.opt.fillchars = {
+    vert = "█",
+    horiz = "█",
+    verthoriz = "█",
+    vertleft = "█",
+    vertright = "█",
+    horizup = "█",
+    horizdown = "█",
+}
+
+vim.api.nvim_set_hl(0, "WinSeparator", { bold = true })
+vim.api.nvim_set_hl(0, "VertSplit", { bold = true })
+
 -- lining
 vim.opt.number = true
 vim.opt.relativenumber = true

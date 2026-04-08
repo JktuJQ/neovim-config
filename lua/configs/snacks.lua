@@ -1,7 +1,8 @@
-local snacks_config = {}
-
-snacks_config.dashboard = require("configs.snacks.dashboard")
+local opts = {
+    dashboard = require("configs.snacks.dashboard"),
+    quickfile = require("configs.snacks.quickfile"),
+}
 
 return {
-    opts = snacks_config,
+    opts = opts,
 }

@@ -4,14 +4,32 @@ local git_status = function()
     if root then
         local branch = vim.fn.system({ "git", "-C", root, "branch", "--show-current" }):gsub("\n", "")
         local diff = vim.fn.system({ "git", "-C", root, "--no-pager", "diff", "--stat", "-B", "-M", "-C" })
+
+        local full_output = ""
         if branch == "" and diff == "" then
-            git_output = "Clean working directory"
+            full_output = "Clean working directory"
         elseif branch ~= "" and diff ~= "" then
-            git_output = "On branch: " .. branch .. "\n" .. diff
+            full_output = "On branch: " .. branch .. "\n" .. diff
         elseif branch ~= "" then
-            git_output = "On branch: " .. branch
+            full_output = "On branch: " .. branch
         else
-            git_output = diff
+            full_output = diff
+        end
+
+        local lines = {}
+        for line in full_output:gmatch("[^\r\n]+") do
+            table.insert(lines, line)
+        end
+
+        local max_lines = 10
+        if #lines > max_lines then
+            local truncated_count = #lines - max_lines
+            for i = 1, max_lines - 1 do
+                git_output = git_output .. lines[i] .. "\n"
+            end
+            git_output = git_output .. "... and " .. truncated_count .. " more lines truncated"
+        else
+            git_output = full_output
         end
     end
     return git_output

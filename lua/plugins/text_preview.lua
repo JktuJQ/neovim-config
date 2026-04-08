@@ -1,11 +1,14 @@
 return {
     {
-        "nvim-treesitter/nvim-treesitter",
-        dependencies = { "OXY2DEV/markview.nvim" },
+        "OXY2DEV/markview.nvim",
+        dependencies = { "nvim-treesitter/nvim-treesitter" },
+
         lazy = false,
-        config = function()
-            local remap = require("remaps")
-            remap("n", "<leader>p", "<Cmd>Markview Toggle")
-        end
-    } 
+
+        opts = function()
+            return require("configs.markview").opts
+        end,
+
+        config = require("configs.markview").config,
+    }
 }

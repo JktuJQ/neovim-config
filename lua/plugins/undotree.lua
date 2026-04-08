@@ -1,5 +1,5 @@
 local remap = function()
-    Snacks.keymap.set("n", "<leader>ut", "<Cmd>lua require('undotree').toggle()<CR>")
+    Snacks.keymap.set("n", "<leader>ut", "<Cmd>lua require('undotree').toggle()<CR>", { desc = "Toggle undotree" })
 end
 
 local opts = {

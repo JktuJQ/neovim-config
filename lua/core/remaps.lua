@@ -42,3 +42,8 @@ Snacks.keymap.set("n", "<C-h>", "<C-w>h")
 Snacks.keymap.set("n", "<C-j>", "<C-w>j")
 Snacks.keymap.set("n", "<C-k>", "<C-w>k")
 Snacks.keymap.set("n", "<C-l>", "<C-w>l")
+
+Snacks.keymap.set("t", "<C-h>", "<C-\\><C-n><C-w>h")
+Snacks.keymap.set("t", "<C-j>", "<C-\\><C-n><C-w>j")
+Snacks.keymap.set("t", "<C-k>", "<C-\\><C-n><C-w>k")
+Snacks.keymap.set("t", "<C-l>", "<C-\\><C-n><C-w>l")

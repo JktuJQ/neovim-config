@@ -1,5 +1,5 @@
 local remap = function()
-    Snacks.keymap.set("n", "<C-m>", function() Snacks.explorer() end)
+    Snacks.keymap.set("n", "<C-m>", function() Snacks.explorer() end, { desc = "Toggle explorer"})
 end
 
 local opts = {

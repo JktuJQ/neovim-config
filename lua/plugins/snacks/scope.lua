@@ -8,13 +8,13 @@ local opts = {
             is = {
                 desc = "inner scope",
                 edge = true,
-                cursor = true,
+                cursor = false,
                 min_size = 2,
                 treesitter = { blocks = { enabled = true } },
             },
             as = {
                 desc = "around scope",
-                cursor = true,
+                cursor = false,
                 min_size = 2,
                 treesitter = { blocks = { enabled = true } },
             },

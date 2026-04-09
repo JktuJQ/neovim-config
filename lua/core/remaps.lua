@@ -2,6 +2,10 @@
 Snacks.keymap.set("i", "kk", "<Esc>")
 Snacks.keymap.set("n", "<Esc>", "<Cmd>nohlsearch<CR>")
 
+Snacks.keymap.set("n", "<leader>yf", ":%y+<CR>")
+
+Snacks.keymap.set("v", "P", '"_dP')
+
 -- fast movement
 Snacks.keymap.set("n", "<left>", "3h")
 Snacks.keymap.set("n", "<down>", "3j")
@@ -13,29 +17,17 @@ Snacks.keymap.set("v", "<down>", "3j")
 Snacks.keymap.set("v", "<up>", "3k")
 Snacks.keymap.set("v", "<right>", "3l")
 
--- pairing symbols
-Snacks.keymap.set("i", "{}", "{}")
-Snacks.keymap.set("i", "[]", "[]")
-Snacks.keymap.set("i", "()", "()")
-Snacks.keymap.set("i", '""', '""')
+-- selection
+Snacks.keymap.set("v", "J", ":m '>+1<CR>gv")
+Snacks.keymap.set("v", "K", ":m '<-2<CR>gv")
 
-Snacks.keymap.set("i", "{{", "{")
-Snacks.keymap.set("i", "[[", "[")
-Snacks.keymap.set("i", "((", "(")
-Snacks.keymap.set("i", '""', '"')
+Snacks.keymap.set("v", "H", "<gv")
+Snacks.keymap.set("v", "L", ">gv")
 
-Snacks.keymap.set("i", "{", "{}<Esc>ha")
-Snacks.keymap.set("i", "[", "[]<Esc>ha")
-Snacks.keymap.set("i", "(", "()<Esc>ha")
-Snacks.keymap.set("i", '"', '""<Esc>ha')
-
-Snacks.keymap.set("i", "{<CR>", "{<CR>}<Esc>k$a<CR>")
-Snacks.keymap.set("i", "[<CR>", "[<CR>]<Esc>k$a<CR>")
-Snacks.keymap.set("i", "(<CR>", "(<CR>)<Esc>k$a<CR>")
-
-Snacks.keymap.set("v", "(", "c()<Esc>hp")
-Snacks.keymap.set("v", "[", "c[]<Esc>hp")
-Snacks.keymap.set("v", "{", "c{}<Esc>hp")
+-- buffers
+Snacks.keymap.set("n", "<leader>bp", ":bprevious<CR>")
+Snacks.keymap.set("n", "<leader>bn", ":bnext<CR>")
+Snacks.keymap.set("n", "<leader>bd", ":bdelete<CR>")
 
 -- splits
 Snacks.keymap.set("n", "<C-q>", ":q<CR>")

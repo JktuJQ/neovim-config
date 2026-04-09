@@ -21,6 +21,9 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.scrolloff = 8
 
+vim.api.nvim_set_hl(0, "SnacksIndent", { fg = "#3b4261" })
+vim.api.nvim_set_hl(0, "SnacksIndentScope", { fg = "#7aa2f7" })
+
 -- tabs
 vim.opt.autoindent = true
 vim.opt.tabstop = 4

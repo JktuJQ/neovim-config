@@ -5,6 +5,9 @@ local config = function()
         picker = require("plugins.snacks.picker").opts,
         explorer = require("plugins.snacks.explorer").opts,
         terminal = require("plugins.snacks.terminal").opts,
+        statuscolumn = require("plugins.snacks.statuscolumn").opts,
+        indent = require("plugins.snacks.indent").opts,
+        scope = require("plugins.snacks.scope").opts,
     })
 
     require("plugins.snacks.picker").config()

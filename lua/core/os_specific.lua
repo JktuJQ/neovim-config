@@ -1,6 +1,4 @@
-local M = {}
-
-local function detect_os()
+local detect_os = function()
     if vim.fn.has("win32") == 1 or vim.fn.has("win64") == 1 then
         return "windows"
     elseif vim.fn.has("mac") == 1 or vim.fn.has("macunix") == 1 then
@@ -12,10 +10,10 @@ local function detect_os()
     end
 end
 
-M.os = detect_os()
+local os = detect_os()
 
-function M.setup_clipboard()
-    if M.os == "windows" then
+local setup_clipboard = function()
+    if os == "windows" then
         local win32yank_path = vim.fn.executable("win32yank.exe")
         if win32yank_path == 1 then
             vim.g.clipboard = {
@@ -45,7 +43,7 @@ function M.setup_clipboard()
             }
         end
 
-    elseif M.os == "mac" then
+    elseif os == "mac" then
         vim.g.clipboard = {
             name = "macOSClipboard",
             copy = {
@@ -59,7 +57,7 @@ function M.setup_clipboard()
             cache_enabled = true,
         }
 
-    elseif M.os == "linux" then
+    elseif os == "linux" then
         local has_wl_clipboard = vim.fn.executable("wl-copy") == 1 and vim.fn.executable("wl-paste") == 1
         local has_xclip = vim.fn.executable("xclip") == 1
         local has_xsel = vim.fn.executable("xsel") == 1
@@ -122,4 +120,7 @@ function M.setup_clipboard()
     vim.opt.clipboard = "unnamedplus"
 end
 
-return M
+return {
+    os = os,
+    setup_clipboard = setup_clipboard,
+}

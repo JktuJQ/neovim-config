@@ -1,5 +1,5 @@
 local opts = {
-    cut_key = nil,
+    cut_key = "c",
     override_del = false,
     exclude = {},
     registers = {

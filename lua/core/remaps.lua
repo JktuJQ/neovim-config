@@ -6,6 +6,11 @@ Snacks.keymap.set("n", "<leader>yf", ":%y+<CR>")
 
 Snacks.keymap.set("v", "P", '"_dP')
 
+-- lsp
+Snacks.keymap.set("n", "<leader>li", function() vim.cmd("LspInfo") end, { desc = "LSP Info" })
+Snacks.keymap.set("n", "<leader>lr", function() vim.cmd("LspRestart") end, { desc = "Restart LSP" })
+Snacks.keymap.set("n", "<leader>le", function() vim.diagnostic.open_float() end, { desc = "Show line diagnostics" })
+
 -- fast movement
 Snacks.keymap.set("n", "<left>", "3h")
 Snacks.keymap.set("n", "<down>", "3j")

@@ -11,6 +11,11 @@ end
 
 local keys = {
     {
+        "<leader>t",
+        "<cmd>Trouble diagnostics toggle<cr>",
+        desc = "Diagnostics",
+    },
+    {
         "<leader>tl",
         "<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
         desc = "LSP Definitions / references (Trouble)",

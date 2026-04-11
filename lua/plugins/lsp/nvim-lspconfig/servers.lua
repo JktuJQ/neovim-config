@@ -55,9 +55,7 @@ local rust_analyzer = {
                 loadOutDirsFromCheck = true,
             },
             procMacro = { enable = true },
-            checkOnSave = {
-                command = "clippy",
-            },
+            checkOnSave = true,
             diagnostics = {
                 enable = true,
             },

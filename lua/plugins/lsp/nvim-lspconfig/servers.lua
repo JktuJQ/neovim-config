@@ -70,23 +70,9 @@ local rust_analyzer = {
     },
 }
 
-local hls = {
-    settings = {
-        haskell = {
-            formattingProvider = "ormolu",
-            plugin = {
-                alternateNumberFormat = { globalOn = true },
-                rename = { globalOn = true },
-                tactical = { globalOn = true },
-            },
-        },
-    },
-}
-
 return {
     lua_ls = lua_ls,
     pyright = pyright,
     clangd = clangd,
     rust_analyzer = rust_analyzer,
-    hls = hls,
 }

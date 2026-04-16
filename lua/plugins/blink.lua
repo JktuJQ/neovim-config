@@ -146,6 +146,5 @@ return {
         build = "cargo build --release",
 
         opts = opts,
-        opts_extend = { "sources.default" },
     },
 }

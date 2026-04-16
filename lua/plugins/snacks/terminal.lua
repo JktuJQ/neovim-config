@@ -11,16 +11,15 @@ local opts = {
     },
 }
 
-local remap = function()
-    Snacks.keymap.set("n", "<C-t>", function() Snacks.terminal() end, { desc = "Toggle terminal" })
-    Snacks.keymap.set("t", "<C-t>", function() Snacks.terminal() end, { desc = "Toggle terminal" })
-end
-
-local config = function()
-    remap()
-end
+local keys = {
+    {
+        "<C-t>",
+        function() Snacks.terminal() end,
+        mode = {"n", "t"},
+        desc = "Toggle terminal"
+    },
+}
 
 return {
     opts = opts,
-    config = config,
 }

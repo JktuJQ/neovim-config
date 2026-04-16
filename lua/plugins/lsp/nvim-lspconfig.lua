@@ -39,7 +39,10 @@ local config = function()
     })
 end
 
+local keys = {}
+
 return {
     opts = opts,
     config = config,
+    keys = keys,
 }

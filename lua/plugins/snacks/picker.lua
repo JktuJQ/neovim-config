@@ -1,13 +1,3 @@
-local remap = function()
-    Snacks.keymap.set("n", "<leader>ff", function() Snacks.picker.files() end, { desc = "Find files" })
-    Snacks.keymap.set("n", "<leader>fg", function() Snacks.picker.grep() end, { desc = "Find by grepping" })
-    Snacks.keymap.set("n", "<leader>fb", function() Snacks.picker.buffers() end, { desc = "Find buffers" })
-    Snacks.keymap.set("n", "<leader>fr", function() Snacks.picker.recent() end, { desc = "Find recent" })
-    Snacks.keymap.set("n", "<leader>fk", function() Snacks.picker.keymaps() end, { desc = "Find keymaps" })
-    Snacks.keymap.set("n", "<leader>fl", function() Snacks.picker.lines() end, { desc = "Find lines" })
-    Snacks.keymap.set("n", "<leader>fw", function() Snacks.picker.grep_word() end, { desc = "Find word" })
-end
-
 local opts = {
     enabled = true,
     layout = {
@@ -29,11 +19,51 @@ local opts = {
     },
 }
 
-local config = function()
-    remap()
-end
-
+local keys = {
+    {
+        "<leader>ff",
+        function() Snacks.picker.files() end,
+        mode = "n",
+        desc = "Find files"
+    },
+    {
+        "<leader>fg",
+        function() Snacks.picker.grep() end,
+        mode = "n",
+        desc = "Find by grepping"
+    },
+    {
+        "<leader>fb",
+        function() Snacks.picker.buffers() end,
+        mode = "n",
+        desc = "Find buffers"
+    },
+    {
+        "<leader>fr",
+        function() Snacks.picker.recent() end,
+        mode = "n",
+        desc = "Find recent"
+    },
+    {
+        "<leader>fk",
+        function() Snacks.picker.keymaps() end,
+        mode = "n",
+        desc = "Find keymaps"
+    },
+    {
+        "<leader>fl",
+        function() Snacks.picker.lines() end,
+        mode = "n",
+        desc = "Find lines"
+    },
+    {
+        "<leader>fw",
+        function() Snacks.picker.grep_word() end,
+        mode = "n",
+        desc = "Find word"
+    },
+}
 return {
     opts = opts,
-    config = config,
+    keys = keys,
 }

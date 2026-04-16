@@ -9,13 +9,8 @@ local opts = {
     },
 }
 
-local config = function()
-    require("cutlass").setup(opts)
-end
-
 return {
     "gbprod/cutlass.nvim",
 
     opts = opts,
-    config = config,
 }

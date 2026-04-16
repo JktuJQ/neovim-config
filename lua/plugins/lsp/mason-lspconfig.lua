@@ -13,7 +13,10 @@ local config = function()
     require("mason-lspconfig").setup(opts)
 end
 
+local keys = {}
+
 return {
     opts = opts,
     config = config,
+    keys = keys,
 }

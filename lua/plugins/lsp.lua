@@ -11,6 +11,7 @@ return {
 
         opts = mason.opts,
         config = mason.config,
+        keys = mason.keys,
     },
     {
         "williamboman/mason-lspconfig.nvim",
@@ -18,6 +19,7 @@ return {
 
         opts = mason_lspconfig.opts,
         config = mason_lspconfig.config,
+        keys = mason_lspconfig.keys,
     },
     {
         "neovim/nvim-lspconfig",
@@ -28,5 +30,6 @@ return {
 
         opts = nvim_lspconfig.opts,
         config = nvim_lspconfig.config,
+        keys = nvim_lspconfig.keys,
     },
 }

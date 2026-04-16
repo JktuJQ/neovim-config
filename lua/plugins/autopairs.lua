@@ -1,6 +1,5 @@
 local opts = {
     check_ts = true,
-    disable_filetype = { "TelescopePrompt" },
 }
 
 return {

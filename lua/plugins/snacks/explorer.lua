@@ -1,7 +1,3 @@
-local remap = function()
-    Snacks.keymap.set("n", "<C-m>", function() Snacks.explorer() end, { desc = "Toggle explorer"})
-end
-
 local opts = {
     enabled = true,
     replace_netrw = true,
@@ -22,11 +18,16 @@ local opts = {
     },
 }
 
-local config = function()
-    remap()
-end
+local keys = {
+    {
+        "<C-m>",
+        function() Snacks.explorer() end,
+        mode = "n",
+        desc = "Toggle explorer"
+    }
+}
 
 return {
     opts = opts,
-    config = config,
+    keys = keys,
 }

@@ -14,7 +14,10 @@ local config = function()
     require("mason").setup(opts)
 end
 
+local keys = {}
+
 return {
     opts = opts,
     config = config,
+    keys = keys,
 }

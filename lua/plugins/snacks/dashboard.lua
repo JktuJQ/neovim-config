@@ -1,4 +1,4 @@
-local git_status = function()
+local function git_status()
     local root = vim.fn.system({ "git", "rev-parse", "--show-toplevel" }):gsub("\n", "")
     local git_output = ""
 

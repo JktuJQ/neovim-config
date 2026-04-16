@@ -17,7 +17,7 @@ local opts = {
     auto_install = true,
     highlight = {
         enable = true,
-        additional_vim_regex_highlighting = false,
+        additional_vim_regex_highlighting = true,
     },
     incremental_selection = {
         enable = true,
@@ -45,14 +45,12 @@ local config = function()
 end
 
 return {
-    {
-        "nvim-treesitter/nvim-treesitter",
+    "nvim-treesitter/nvim-treesitter",
 
-        build = ":TSUpdate",
-        event = { "BufReadPost", "BufNewFile" },
-        cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
+    build = ":TSUpdate",
+    event = { "BufReadPost", "BufNewFile" },
+    cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
 
-        opts = opts,
-        config = config,
-    },
+    opts = opts,
+    config = config,
 }

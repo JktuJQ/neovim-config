@@ -1,7 +1,3 @@
-local remap = function()
-    Snacks.keymap.set("n", "<leader>ut", "<Cmd>lua require('undotree').toggle()<CR>", { desc = "Toggle undotree" })
-end
-
 local opts = {
     float_diff = true,
     layout = "left_bottom",
@@ -27,16 +23,18 @@ local opts = {
     }
 }
 
-local config = function()
-    require("undotree").setup(opts)
-    remap()
-end
+local keys = {
+    {
+        "<leader>ut",
+        "<Cmd>lua require('undotree').toggle()<CR>",
+        mode = "n",
+        desc = "Toggle undotree"
+    },
+}
 
 return {
-    {
-        "jiaoshijie/undotree",
+    "jiaoshijie/undotree",
 
-        opts = opts,
-        config = config,
-    }
+    opts = opts,
+    keys = keys,
 }

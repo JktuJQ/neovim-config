@@ -24,12 +24,42 @@ local config = function()
 end
 
 local keys = {
-    { "<leader>dc", function() require("dap").continue() end, mode = "n", desc = "Start/continue" },
-    { "<leader>ds", function() require("dap").step_over() end, mode = "n", desc = "Step over" },
-    { "<leader>di", function() require("dap").step_into() end, mode = "n", desc = "Step into" },
-    { "<leader>db", function() require("dap").toggle_breakpoint() end, mode = "n", desc = "Toggle breakpoint" },
-    { "<leader>dB", function() require("dap").set_breakpoint(vim.fn.input("Condition: ")) end, mode = "n", desc = "Conditional breakpoint" },
-    { "<leader>dr", function() require("dap").repl.toggle() end, mode = "n", desc = "Toggle REPL" },
+    {
+        "<leader>dc",
+        function() require("dap").continue() end,
+        mode = "n",
+        desc = "Start/continue"
+    },
+    {
+        "<leader>ds",
+        function() require("dap").step_over() end,
+        mode = "n",
+        desc = "Step over"
+    },
+    {
+        "<leader>di",
+        function() require("dap").step_into() end,
+        mode = "n",
+        desc = "Step into"
+    },
+    {
+        "<leader>db",
+        function() require("dap").toggle_breakpoint() end,
+        mode = "n",
+        desc = "Toggle breakpoint"
+    },
+    {
+        "<leader>dB",
+        function() require("dap").set_breakpoint(vim.fn.input("Condition: ")) end,
+        mode = "n",
+        desc = "Conditional breakpoint"
+    },
+    {
+        "<leader>dr",
+        function() require("dap").repl.toggle() end,
+        mode = "n",
+        desc = "Toggle REPL"
+    },
 }
 
 return {

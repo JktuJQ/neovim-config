@@ -42,17 +42,72 @@ local config = function()
 end
 
 local keys = {
-    { "<leader>li", function() vim.cmd("LspInfo") end, mode = "n", desc = "LSP Info" },
-    { "<leader>lr", function() vim.cmd("LspRestart") end, mode = "n", desc = "Restart LSP" },
-    { "<leader>le", function() vim.diagnostic.open_float() end, mode = "n", desc = "Show line diagnostics" },
-    { "gD", vim.lsp.buf.declaration, mode = "n", desc = "Go to declaration" },
-    { "gd", vim.lsp.buf.definition, mode = "n", desc = "Go to definition" },
-    { "H", vim.lsp.buf.hover, mode = "n", desc = "Hover documentation" },
-    { "gi", vim.lsp.buf.implementation, mode = "n", desc = "Go to implementation" },
-    { "<leader>rn", vim.lsp.buf.rename, mode = "n", desc = "Rename symbol" },
-    { "<leader>ca", vim.lsp.buf.code_action, mode = "n", desc = "Code action" },
-    { "gu", vim.lsp.buf.references, mode = "n", desc = "Find references" },
-    { "<leader>f", function() vim.lsp.buf.format({ async = true }) end, mode = "n", desc = "Format document" },
+    {
+        "<leader>li",
+        function() vim.cmd("LspInfo") end,
+        mode = "n",
+        desc = "LSP Info"
+    },
+    {
+        "<leader>lr",
+        function() vim.cmd("LspRestart") end,
+        mode = "n",
+        desc = "Restart LSP"
+    },
+    {
+        "<leader>le",
+        function() vim.diagnostic.open_float() end,
+        mode = "n",
+        desc = "Show line diagnostics"
+    },
+    {
+        "gD",
+        vim.lsp.buf.declaration,
+        mode = "n",
+        desc = "Go to declaration"
+    },
+    {
+        "gd",
+        vim.lsp.buf.definition,
+        mode = "n",
+        desc = "Go to definition"
+    },
+    {
+        "H",
+        vim.lsp.buf.hover,
+        mode = "n",
+        desc = "Hover documentation"
+    },
+    {
+        "gi",
+        vim.lsp.buf.implementation,
+        mode = "n",
+        desc = "Go to implementation"
+    },
+    {
+        "<leader>rn",
+        vim.lsp.buf.rename,
+        mode = "n",
+        desc = "Rename symbol"
+    },
+    {
+        "<leader>ca",
+        vim.lsp.buf.code_action,
+        mode = "n",
+        desc = "Code action"
+    },
+    {
+        "gu",
+        vim.lsp.buf.references,
+        mode = "n",
+        desc = "Find references"
+    },
+    {
+        "<leader>f",
+        function() vim.lsp.buf.format({ async = true }) end,
+        mode = "n",
+        desc = "Format document"
+    },
 }
 
 return {

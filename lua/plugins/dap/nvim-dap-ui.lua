@@ -24,7 +24,12 @@ local config = function()
 end
 
 local keys = {
-    { "<leader>du", function() require("dapui").toggle() end, mode = "n", desc = "Toggle DAP UI" },
+    {
+        "<leader>du",
+        function() require("dapui").toggle() end,
+        mode = "n",
+        desc = "Toggle DAP UI",
+    },
 }
 
 return {

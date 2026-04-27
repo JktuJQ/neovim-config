@@ -26,7 +26,7 @@ local opts = {
                     end
                     return "LSP: " .. table.concat(names, ", ")
                 end,
-                icon = "󰅂 ",
+                icon = "",
             },
         },
         lualine_y = { "progress" },

@@ -10,14 +10,11 @@ local opts = {
     max_concurrent_installers = 4,
 }
 
-local config = function()
-    require("mason").setup(opts)
-end
-
-local keys = {}
-
 return {
+    "williamboman/mason.nvim",
+
+    cmd = "Mason",
+    build = ":MasonUpdate",
+
     opts = opts,
-    config = config,
-    keys = keys,
 }

@@ -1,7 +1,7 @@
 local opts = {
 	formatters_by_ft = {
 		lua = { "stylua" },
-		python = { "isort", "black" },
+		python = { "black", "isort" },
 		javascript = { { "prettierd", "prettier" } },
 		go = { "goimports", "gofmt" },
 		rust = { "rustfmt", lsp_format = "fallback" },
@@ -13,10 +13,6 @@ local opts = {
 		yaml = { "prettierd", "prettier" },
 		["*"] = { "trim_whitespace" },
 	},
-	format_on_save = {
-		timeout_ms = 500,
-		lsp_fallback = true,
-	},
 	notify_on_error = true,
 	formatters = {
 		clang_format = {
@@ -27,17 +23,6 @@ local opts = {
 		},
 	},
 }
-
-local config = function()
-	require("conform").setup(opts)
-
-	vim.api.nvim_create_autocmd("BufWritePre", {
-		pattern = "*",
-		callback = function(args)
-			require("conform").format({ bufnr = args.buf, timeout_ms = 500, lsp_fallback = true })
-		end,
-	})
-end
 
 local keys = {
 	{
@@ -57,6 +42,5 @@ return {
 	cmd = { "ConformInfo" },
 
 	opts = opts,
-	config = config,
 	keys = keys,
 }

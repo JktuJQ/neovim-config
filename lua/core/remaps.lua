@@ -6,6 +6,16 @@ Snacks.keymap.set("n", "<leader>yf", ":%y+<CR>")
 
 Snacks.keymap.set("v", "P", '"_dP')
 
+Snacks.keymap.set("n", "n", function()
+    if vim.opt.relativenumber:get() then
+        vim.opt.relativenumber = false
+        vim.opt.number = true
+    else
+        vim.opt.relativenumber = true
+        vim.opt.number = true
+    end
+end, { desc = "Toggle relative/absolute line numbers" })
+
 -- fast movement
 Snacks.keymap.set("n", "<left>", "3h")
 Snacks.keymap.set("n", "<down>", "3j")

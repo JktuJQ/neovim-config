@@ -4,5 +4,4 @@ local opts = {
 
 return {
     opts = opts,
-    keys = keys,
 }

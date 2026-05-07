@@ -1,12 +1,13 @@
 local opts = {
     enabled = true,
+    position = "float",
     win = {
         style = "terminal",
-        position = "bottom",
-        height = 0.3,
+        position = "float",
         border = "rounded",
-        bo = {
-            filetype = "snacks_terminal",
+        title = "Terminal",
+        wo = {
+            winbar = "",
         },
     },
 }
@@ -14,12 +15,15 @@ local opts = {
 local keys = {
     {
         "<C-t>",
-        function() Snacks.terminal() end,
-        mode = {"n", "t"},
-        desc = "Toggle terminal"
+        function()
+            Snacks.terminal.toggle()
+        end,
+        mode = { "n", "t" },
+        desc = "Toggle terminal",
     },
 }
 
 return {
     opts = opts,
+    keys = keys,
 }

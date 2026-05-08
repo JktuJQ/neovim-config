@@ -4,9 +4,9 @@ Snacks.keymap.set("n", "<Esc>", "<Cmd>nohlsearch<CR>")
 
 Snacks.keymap.set("n", "<leader>yf", ":%y+<CR>")
 
-Snacks.keymap.set("v", "P", '"_dP')
+Snacks.keymap.set("v", "p", '"_dp')
 
-Snacks.keymap.set("n", "n", function()
+Snacks.keymap.set("n", "<leader>n", function()
     if vim.opt.relativenumber:get() then
         vim.opt.relativenumber = false
         vim.opt.number = true

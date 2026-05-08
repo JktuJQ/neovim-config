@@ -7,12 +7,12 @@ Snacks.keymap.set("n", "<leader>yf", ":%y+<CR>")
 Snacks.keymap.set("v", "p", '"_dp')
 
 Snacks.keymap.set("n", "<leader>n", function()
-    if vim.opt.relativenumber:get() then
-        vim.opt.relativenumber = false
-        vim.opt.number = true
+    if vim.wo.relativenumber then
+        vim.wo.relativenumber = false
+        vim.wo.number = true
     else
-        vim.opt.relativenumber = true
-        vim.opt.number = true
+        vim.wo.relativenumber = true
+        vim.wo.number = true
     end
 end, { desc = "Toggle relative/absolute line numbers" })
 

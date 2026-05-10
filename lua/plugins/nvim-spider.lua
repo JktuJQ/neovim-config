@@ -1,10 +1,6 @@
 local opts = {
-    skipInsignificantPunctuation = true,
+    skipInsignificantPunctuation = false,
 }
-
-local function config()
-    require("spider").setup(opts)
-end
 
 local keys = {
     {
@@ -36,6 +32,6 @@ local keys = {
 return {
     "chrisgrieser/nvim-spider",
 
-    config = config,
+    opts = opts,
     keys = keys,
 }

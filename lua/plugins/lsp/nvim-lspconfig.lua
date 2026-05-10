@@ -45,7 +45,7 @@ local keys = {
 	{
 		"<leader>li",
 		function()
-			vim.cmd("LspInfo")
+			vim.cmd("checkhealth vim.lsp")
 		end,
 		mode = "n",
 		desc = "LSP Info",
@@ -53,10 +53,20 @@ local keys = {
 	{
 		"<leader>lr",
 		function()
-			vim.cmd("LspRestart")
+			vim.cmd("lsp restart")
 		end,
 		mode = "n",
 		desc = "Restart LSP",
+	},
+	{
+		"<leader>ll",
+		function()
+			local state_path = vim.fn.stdpath("state")
+			local log_path = vim.fs.joinpath(state_path, "lsp.log")
+			vim.cmd(string.format("split %s", log_path))
+		end,
+		mode = "n",
+		desc = "Open LSP log",
 	},
 	{
 		"<leader>le",

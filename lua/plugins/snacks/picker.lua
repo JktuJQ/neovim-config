@@ -6,15 +6,15 @@ local opts = {
 	},
 	sources = {
 		files = {
-			hidden = false,
+			hidden = true,
 			ignored = true,
 		},
 		grep = {
-			hidden = false,
+			hidden = true,
 			ignored = true,
 		},
 		explorer = {
-			hidden = false,
+			hidden = true,
 			ignored = true,
 		},
 	},
